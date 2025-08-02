@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thriffty App Splash</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .splash {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      transition: opacity 1s ease;
+    }
+
+    .splash img {
+      width: 180px;
+      height: auto;
+      animation: bounce 1.2s ease;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .main {
+      display: none;
+      height: 100vh;
+      padding: 2rem;
+      background-color: #fefefe;
+      text-align: center;
+    }
+
+    .main h1 {
+      font-size: 24px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Splash Screen -->
+  <div class="splash" id="splashScreen">
+    <img src="./logo-transparent-png.png" alt="Thriffty Logo" />
+  </div>
+
+  <!-- Main Content (after splash) -->
+  <div class="main" id="mainContent">
+    <h1>Welcome to Thriffty!</h1>
+    <p>Start browsing the best campus thrift deals 👕📚👜</p>
+  </div>
+
+  <script>
+    // Hide splash after 2.5 seconds
+    setTimeout(() => {
+      document.getElementById('splashScreen').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+    }, 2500);
+  </script>
+
+</body>
+</html>
+
+
